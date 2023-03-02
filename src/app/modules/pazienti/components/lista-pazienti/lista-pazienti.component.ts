@@ -7,9 +7,9 @@ import { Paziente } from 'src/app/shared/interfaces/paziente';
   templateUrl: './lista-pazienti.component.html',
   styleUrls: ['./lista-pazienti.component.scss']
 })
-export class ListaPazientiComponent implements OnInit{
+export class ListaPazientiComponent{
 
-  listaPazienti: Paziente[]=[]
+/*   listaPazienti: Paziente[]=[]
 
   constructor(private pazienteService: PatientService) {
 
@@ -24,15 +24,34 @@ export class ListaPazientiComponent implements OnInit{
   }
 
   getPazienti(){
-
     /*     this.http.get<Paziente[]>('assets/patients.json').subscribe(data => {
-      console.log(data); */
+      console.log(data);
 
     this.pazienteService.getListaPazienti().subscribe(
       (data: Paziente[]) => {
         this.listaPazienti = data;
       }
     )
+  } */
+  listaPazienti: Paziente[]=[]
+
+  constructor(private pazienteService: PatientService) {
+
   }
 
+  ngOnInit(): void {
+    this.pazienteService.getListaPazienti().subscribe(
+      (pazienti: Paziente[]) => {
+        this.listaPazienti = pazienti
+      }
+    )
+  }
+
+/*   getPazienti(){
+    this.pazienteService.getListaPazienti().subscribe(
+      (data: Paziente[]) => {
+        this.listaPazienti = data;
+      }
+    )
+  } */
 }

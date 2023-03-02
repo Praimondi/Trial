@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListaPazientiComponent } from './components/lista-pazienti/lista-pazienti.component';
+import { PazientiComponent } from './pages/pazienti/pazienti.component';
 
 
 const routes: Routes = [
-/*   {
+  {
     path: '',
     component: PazientiComponent,
     children:[
-      {path:'car', component: CarComponent},
-      {path:'carPreview', component: CarPreviewComponent},
+      {path:'listaPazienti', component: ListaPazientiComponent},
+      // {path:'carPreview', component: CarPreviewComponent},
     ]
-  }, */
+  },
 ];
 
 @NgModule({

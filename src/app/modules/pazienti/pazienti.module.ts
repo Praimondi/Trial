@@ -4,6 +4,7 @@ import { PazientiRoutingModule } from './pazienti-routing.module';
 import { PazientiComponent } from './pages/pazienti/pazienti.component';
 import { ListaPazientiComponent } from './components/lista-pazienti/lista-pazienti.component';
 import { PazienteComponent } from './components/paziente/paziente.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 
@@ -15,7 +16,8 @@ import { PazienteComponent } from './components/paziente/paziente.component';
   ],
   imports: [
     CommonModule,
-    PazientiRoutingModule
+    PazientiRoutingModule,
+    CoreModule
   ]
 })
 export class PazientiModule { }
