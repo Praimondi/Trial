@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-definitions',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./definitions.component.scss']
 })
 export class DefinitionsComponent implements OnInit {
-  constructor() { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
-      
+  }
+  go2Activities(){
+    this.router.navigate(['activities']);
   }
 }

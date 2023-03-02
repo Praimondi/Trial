@@ -15,7 +15,7 @@ export class PazientiComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  go2Preview(){
+  go2patients(){
     this.router.navigate(['listaPazienti']);
   }
 }

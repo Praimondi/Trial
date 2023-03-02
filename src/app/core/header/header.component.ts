@@ -10,11 +10,16 @@ export class HeaderComponent {
   constructor(private router: Router) { }
   ngOnInit(): void {
   }
-  goToHomepage() {
+
+  go2homepage() {
     this.router.navigate(['']);
   }
 
   go2pazienti() {
     this.router.navigate(['pazienti']);
+  }
+
+  go2definitions(){
+    this.router.navigate(['definitions']);
   }
 }
