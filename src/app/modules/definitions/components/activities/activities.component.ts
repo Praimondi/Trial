@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PatientService } from 'src/app/core/services/patient.service';
 import { Attivita } from 'src/app/shared/interfaces/attivita';
 
@@ -10,7 +11,7 @@ import { Attivita } from 'src/app/shared/interfaces/attivita';
 export class ActivitiesComponent implements OnInit {
   listaAttivita: Attivita[]=[]
 
-  constructor(private pazienteService: PatientService) {}
+  constructor(private pazienteService: PatientService, private router: Router) {}
 
   ngOnInit(): void {
     this.pazienteService.getActivities().subscribe(
@@ -18,5 +19,8 @@ export class ActivitiesComponent implements OnInit {
         this.listaAttivita = attivita
       }
     )
+  }
+  go2definitions(){
+    this.router.navigate(['definitions']);
   }
 }

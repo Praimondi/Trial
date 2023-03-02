@@ -4,14 +4,19 @@ import { ActivitiesComponent } from './components/activities/activities.componen
 import { DefinitionsComponent } from './pages/definitions/definitions.component';
 
 const routes: Routes = [
-    {
+/*     {
       path: '',
       component: DefinitionsComponent,
       children:[
         {path:'activities', component: ActivitiesComponent},
-
       ]
+    }, */
+    {
+      path: '',      component: DefinitionsComponent
     },
+    {
+      path: 'activities', component: ActivitiesComponent
+    }
 ];
 
 @NgModule({
