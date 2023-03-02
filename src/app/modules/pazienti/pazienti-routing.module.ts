@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {
+/*   {
     path: '',
     component: PazientiComponent,
     children:[
       {path:'car', component: CarComponent},
       {path:'carPreview', component: CarPreviewComponent},
     ]
-  },
+  }, */
 ];
 
 @NgModule({
