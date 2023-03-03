@@ -9,17 +9,18 @@ import { Attivita } from 'src/app/shared/interfaces/attivita';
   styleUrls: ['./activities.component.scss']
 })
 export class ActivitiesComponent implements OnInit {
-  listaAttivita: Attivita[]=[]
+  listaAttivitaTipo: Attivita[]=[]
 
   constructor(private pazienteService: PatientService, private router: Router) {}
 
   ngOnInit(): void {
+    // this.listaAttivitaTipo = this.pazienteService.getActivities()
     this.pazienteService.getActivities().subscribe(
-      (attivita: Attivita[]) => {
-        this.listaAttivita = attivita
-      }
-    )
+      (data) => {
+        this.listaAttivitaTipo = data;
+      })
   }
+
   go2definitions(){
     this.router.navigate(['definitions']);
   }

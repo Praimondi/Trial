@@ -10,13 +10,13 @@ export class DefinitionsComponent implements OnInit {
   constructor(private router: Router) { }
   ngOnInit(): void {
   }
-  
-  go2Activities(){
-    this.router.navigate(['definitions/activities']);
-  }
 
   go2home(){
     this.router.navigate(['']);
+  }
+
+  go2Activities(){
+    this.router.navigate(['definitions/activities']);
   }
 
 }

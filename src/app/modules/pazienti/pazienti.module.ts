@@ -7,12 +7,11 @@ import { PazienteComponent } from './components/paziente/paziente.component';
 import { CoreModule } from 'src/app/core/core.module';
 
 
-
 @NgModule({
   declarations: [
     PazientiComponent,
     ListaPazientiComponent,
-    PazienteComponent
+    PazienteComponent,
   ],
   imports: [
     CommonModule,

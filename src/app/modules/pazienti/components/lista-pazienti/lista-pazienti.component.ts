@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/core/services/patient.service';
 import { Paziente } from 'src/app/shared/interfaces/paziente';
+import { PazienteComponent } from '../paziente/paziente.component';
+
 
 @Component({
   selector: 'app-lista-pazienti',
@@ -8,16 +10,27 @@ import { Paziente } from 'src/app/shared/interfaces/paziente';
   styleUrls: ['./lista-pazienti.component.scss']
 })
 export class ListaPazientiComponent{
+  listaPazienti: Paziente[]=[];
 
-  listaPazienti: Paziente[]=[]
-
-  constructor(private pazienteService: PatientService) {}
-
+  constructor(private patientService:  PatientService) { }
   ngOnInit(): void {
-    this.pazienteService.getListaPazienti().subscribe(
-      (pazienti: Paziente[]) => {
-        this.listaPazienti = pazienti
-      }
-    )
+    this.patientService.getListaPazienti().subscribe(
+      (data) => {
+        this.listaPazienti = data;
+      })
+
+    this.listaPazienti.forEach(paziente => {
+      this.patientService.getSpecificSummary(paziente.id.toString()).subscribe(
+        (data) => {
+        paziente.summary = data;
+      })
+    });
+
+    this.patientService.pushPazientiIntoService(this.listaPazienti);
+    
+    //this.listaPazienti = this.patientService.getListaPazienti();
   }
+
 }
+
+

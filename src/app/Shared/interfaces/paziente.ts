@@ -1,3 +1,5 @@
+import { AttivitaSvolta } from "./attivita-svolta";
+
 export interface Paziente {
   id: number,
   name: string,
@@ -5,5 +7,6 @@ export interface Paziente {
   birthDate: string,
   heightCm: number,
   weightKg: number,
-  bmi: number
+  bmi: number,
+  summary: AttivitaSvolta[]
 }
