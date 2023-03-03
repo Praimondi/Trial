@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PatientService } from 'src/app/core/services/patient.service';
 
 @Component({
   selector: 'app-definitions',
@@ -7,8 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./definitions.component.scss']
 })
 export class DefinitionsComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private patientService: PatientService) { }
   ngOnInit(): void {
+    this.patientService.setActivities();
   }
 
   go2home(){

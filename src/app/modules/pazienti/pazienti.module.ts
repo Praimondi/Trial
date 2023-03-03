@@ -5,18 +5,20 @@ import { PazientiComponent } from './pages/pazienti/pazienti.component';
 import { ListaPazientiComponent } from './components/lista-pazienti/lista-pazienti.component';
 import { PazienteComponent } from './components/paziente/paziente.component';
 import { CoreModule } from 'src/app/core/core.module';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     PazientiComponent,
     ListaPazientiComponent,
     PazienteComponent,
+
   ],
   imports: [
     CommonModule,
     PazientiRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ]
 })
 export class PazientiModule { }

@@ -15,41 +15,48 @@ export class PatientService{
   constructor(private http: HttpClient) {
   }
 
-  getListaPazienti(){
+/*   getListaPazienti(){
     return this.http.get<Paziente[]>('../../../assets/json/patients.json');
   }
+
   getSpecificSummary(id: string){
     return this.http.get<AttivitaSvolta[]>('../../../assets/json/patients/'+id+'/summary.json');
   }
 
+  getActivities(){
+    return this.http.get<Attivita[]>('../../../assets/json/definitions/activities.json');
+  }
+
   pushPazientiIntoService(listaPazienti: Paziente[]=[]){
     this.listaPazienti = listaPazienti;
-  }
-/*   getListaPazienti(){
-    this.http.get<Paziente[]>('../../../assets/json/patients.json').subscribe(
-      (data) => {
-        this.listaPazienti = data
-      })
-
-    this.listaPazienti.forEach(paziente => {
-      this.http.get<AttivitaSvolta[]>('../../../assets/json/patients/'+paziente.id+'/summary.json').subscribe(
-        (data) => {
-        paziente.summary = data;
-      })
-
-    });
-
-    return this.listaPazienti;
   } */
 
-  getActivities(){
-/*     this.http.get<Attivita[]>('../../../assets/json/definitions/activities.json').subscribe(
+  setListaPazienti(){
+    this.http.get<Paziente[]>('../../../assets/json/patients.json').subscribe(
+      (data) => {
+        this.listaPazienti = data;
+        this.listaPazienti.forEach(paziente => {
+          this.http.get<AttivitaSvolta[]>('../../../assets/json/patients/'+paziente.id.toString()+'/summary.json').subscribe(data=>{
+            paziente.summary = data;
+          })
+        })
+      })
+  }
+
+  setActivities(){
+    this.http.get<Attivita[]>('../../../assets/json/definitions/activities.json').subscribe(
       (data) => {
         this.activities = data;
-      })
+      }
+    )
+  }
 
-    return this.activities; */
-    return this.http.get<Attivita[]>('../../../assets/json/definitions/activities.json');
+  getActivities(){
+    return this.activities;
+  }
+
+  getListaPazienti(){
+    return this.listaPazienti;
   }
 
 }

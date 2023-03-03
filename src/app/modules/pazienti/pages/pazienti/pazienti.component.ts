@@ -10,10 +10,14 @@ import { Paziente } from 'src/app/shared/interfaces/paziente';
 })
 export class PazientiComponent implements OnInit {
 
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
+  selectedValue: string;
+  constructor(private router: Router, private patientService: PatientService) {
+    this.selectedValue = "";
+  }
+  ngOnInit(): void {
+    this.patientService.setListaPazienti();
+    this.patientService.setActivities();
+  }
 
   go2patients(){
     this.router.navigate(['listaPazienti']);
