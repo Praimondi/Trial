@@ -1,58 +1,175 @@
-<div style="
+<h4 style="display: flex; justify-content: center;">Filtro Selezionato: {{selectedFilter}}</h4>
+
+<div
+  style="width: 100vw; height: fit-content; display: flex; flex-direction:column; justify-content: center;">
+
+  <div *ngIf="selectedFilter==='noFilter' || !selectedFilter" style="
     width: 100vw;
-    height: 120vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+
+    <table class="table" style="width: 40%; border: 1px solid #000">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Cognome</th>
+          <th scope="col">Genere</th>
+          <th scope="col">info</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let paziente of listaPazienti">
+        <tr>
+          <th scope="row">{{ paziente.id }}</th>
+          <td>{{ paziente.name }}</td>
+          <td>{{ paziente.gender }}</td>
+          <td>
+            <a (click)="go2patient(paziente.id)" style="
+            color: #fff;
+            text-decoration: none;
+            background-color: #0dcaf0;
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: none;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">vai</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div *ngIf="selectedFilter==='moderate150'" style="
+    width: 100vw;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
   ">
-  <table class="table" style="width: 40%; border: 1px solid #000">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome Cognome</th>
-        <th scope="col">Genere</th>
-        <th scope="col">info</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let paziente of listaPazienti">
-<!--       "background-color: rgb(189, 239, 189);"-->
-<!--       "background-color: rgb(245, 191, 178);"-->
-        <tr [ngStyle]="{'background-color': Moderate150Filter(paziente.summary)}">
-        <th scope="row">{{ paziente.id }}</th>
-        <td>{{ paziente.name }}</td>
-        <td>{{ paziente.gender }}</td>
-        <td>
-          <a href="" style="
-              color: #fff;
-              text-decoration: none;
-              background-color: #0dcaf0;
-              padding: 2px 6px;
-              border-radius: 6px;
-              border: none;
-              width: 60%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            ">vai</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table" style="width: 40%; border: 1px solid #000">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Cognome</th>
+          <th scope="col">Genere</th>
+          <th scope="col">info</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let paziente of listaPazienti">
+        <tr [ngStyle]="{'background-color': moderate150Filter(paziente.summary)}">
+          <th scope="row">{{ paziente.id }}</th>
+          <td>{{ paziente.name }}</td>
+          <td>{{ paziente.gender }}</td>
+          <td>
+            <a (click)="go2patient(paziente.id)" style="
+            color: #fff;
+            text-decoration: none;
+            background-color: #0dcaf0;
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: none;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">vai</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+  <div *ngIf="selectedFilter==='vigorous70'" style="
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  ">
+    <table class="table" style="width: 40%; border: 1px solid #000">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Cognome</th>
+          <th scope="col">Genere</th>
+          <th scope="col">info</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let paziente of listaPazienti">
+        <tr [ngStyle]="{'background-color': vigorous70Filter(paziente.summary)}">
+          <th scope="row">{{ paziente.id }}</th>
+          <td>{{ paziente.name }}</td>
+          <td>{{ paziente.gender }}</td>
+          <td>
+            <a (click)="go2patient(paziente.id)" style="
+            color: #fff;
+            text-decoration: none;
+            background-color: #0dcaf0;
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: none;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">vai</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div *ngIf="selectedFilter==='mixedIntensity'" style="
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  ">
+    <table class="table" style="width: 40%; border: 1px solid #000">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Cognome</th>
+          <th scope="col">Genere</th>
+          <th scope="col">info</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let paziente of listaPazienti">
+        <tr [ngStyle]="{'background-color': mixedFilter(paziente.summary)}">
+          <th scope="row">{{ paziente.id }}</th>
+          <td>{{ paziente.name }}</td>
+          <td>{{ paziente.gender }}</td>
+          <td>
+            <a (click)="go2patient(paziente.id)" style="
+            color: #fff;
+            text-decoration: none;
+            background-color: #0dcaf0;
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: none;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">vai</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-
-
-
-<!-- <p *ngIf="filtro==="tutti">
-
-</p> -->
-<p *ngIf="">
-
-
-</p>
-<p *ngIf="">
-
-</p>
-<p *ngIf="">
-
-</p>

@@ -1,1 +1,35 @@
-<p>paziente works!</p>
+<h4 style="display: flex; justify-content: center;">ID Paziente Selezionato: {{pazienteSelezionato.id}}</h4>
+
+<div style="width: 100vw; height: fit-content; display: flex; flex-direction: row; justify-content: center;">
+
+  <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px; border: 1px solid rgb(0, 0, 0); width: 20%;">
+    <h4 class="card-title" style="margin-left: 30px;">Nome: {{pazienteSelezionato.name}}</h4>
+
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Genere: {{pazienteSelezionato.gender}}</li>
+        <li class="list-group-item">Data di Nascita: {{pazienteSelezionato.birthDate}} </li>
+        <li class="list-group-item">Altezza: {{ pazienteSelezionato.heightCm }} cm</li>
+        <li class="list-group-item">Peso: {{ pazienteSelezionato.weightKg }} Kg</li>
+        <li class="list-group-item">Indice di massa corporea(bmi): {{ pazienteSelezionato.bmi }}</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px; border: 1px solid rgb(0, 0, 0); width: 20%;">
+    <h4 class="card-title" style="display: flex; justify-content: center">Summary </h4>
+    <div class="card-body" *ngFor="let attivita of pazienteSelezionato.summary">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Attività: {{attivita.activity}} </li>
+        <li class="list-group-item">Minuti: {{attivita.minutes}} </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<div style="display: flex; flex-direction: row; justify-content: center;">
+  <button (click)="go2ListaPazienti()" class="btn btn-primary" style=" height: 3vh;display: flex; flex-direction: row; justify-content: center;"><i class="bi bi-arrow-left"></i> Indietro</button>
+</div>
+

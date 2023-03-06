@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaPazientiComponent } from './components/lista-pazienti/lista-pazienti.component';
+import { PazienteComponent } from './components/paziente/paziente.component';
 import { PazientiComponent } from './pages/pazienti/pazienti.component';
 
 
@@ -10,7 +11,10 @@ const routes: Routes = [
     component: PazientiComponent,
     children:[
       {path:'listaPazienti', component: ListaPazientiComponent},
-      // {path:'carPreview', component: CarPreviewComponent},
+      {path:'listaPazienti/:selectedValue', component: ListaPazientiComponent},
+      
+      {path:'paziente/', component: PazienteComponent},
+      {path:'paziente/:paziente', component: PazienteComponent},
     ]
   },
 ];

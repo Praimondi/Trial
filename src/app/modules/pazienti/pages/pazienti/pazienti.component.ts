@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { PatientService } from 'src/app/core/services/patient.service';
 import { Paziente } from 'src/app/shared/interfaces/paziente';
@@ -10,16 +10,28 @@ import { Paziente } from 'src/app/shared/interfaces/paziente';
 })
 export class PazientiComponent implements OnInit {
 
-  selectedValue: string;
+  selectedValue: string="";
+
   constructor(private router: Router, private patientService: PatientService) {
-    this.selectedValue = "";
   }
   ngOnInit(): void {
+    console.log('sono in pazienti costruttore: '+this.selectedValue);
     this.patientService.setListaPazienti();
     this.patientService.setActivities();
   }
 
   go2patients(){
-    this.router.navigate(['listaPazienti']);
+    this.router.navigate(['listaPazienti/'+this.selectedValue]);
+
+/*     if(this.selectedValue==""){
+      this.router.navigate(['listaPazienti', this.selectedValue]);
+
+    } if(this.selectedValue=="moderate150") {
+      this.router.navigate(['listaPazienti',this.selectedValue]);
+    }
+    this.router.navigate(['listaPazienti', this.selectedValue]); */
+
+
   }
+
 }
