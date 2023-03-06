@@ -15,10 +15,6 @@ export class ActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaAttivitaTipo = this.pazienteService.getActivities()
-/*     this.pazienteService.getActivities().subscribe(
-      (data) => {
-        this.listaAttivitaTipo = data;
-      }) */
   }
 
   go2definitions(){

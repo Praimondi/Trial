@@ -25,7 +25,6 @@ export class PazienteComponent implements OnInit {
         this.pazienteSelezionato = paziente;
       }
     });
-
   }
 
   go2ListaPazienti(){

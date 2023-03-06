@@ -15,22 +15,6 @@ export class PatientService{
   constructor(private http: HttpClient) {
   }
 
-/*   getListaPazienti(){
-    return this.http.get<Paziente[]>('../../../assets/json/patients.json');
-  }
-
-  getSpecificSummary(id: string){
-    return this.http.get<AttivitaSvolta[]>('../../../assets/json/patients/'+id+'/summary.json');
-  }
-
-  getActivities(){
-    return this.http.get<Attivita[]>('../../../assets/json/definitions/activities.json');
-  }
-
-  pushPazientiIntoService(listaPazienti: Paziente[]=[]){
-    this.listaPazienti = listaPazienti;
-  } */
-
   setListaPazienti(){
     this.http.get<Paziente[]>('../../../assets/json/patients.json').subscribe(
       (data) => {

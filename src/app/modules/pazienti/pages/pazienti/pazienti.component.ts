@@ -22,16 +22,6 @@ export class PazientiComponent implements OnInit {
 
   go2patients(){
     this.router.navigate(['listaPazienti/'+this.selectedValue]);
-
-/*     if(this.selectedValue==""){
-      this.router.navigate(['listaPazienti', this.selectedValue]);
-
-    } if(this.selectedValue=="moderate150") {
-      this.router.navigate(['listaPazienti',this.selectedValue]);
-    }
-    this.router.navigate(['listaPazienti', this.selectedValue]); */
-
-
   }
 
 }
