@@ -8,6 +8,9 @@ import { AttivitaSvolta } from 'src/app/shared/interfaces/attivita-svolta';
   providedIn: 'root'
 })
 export class PatientService{
+  preload() {
+    throw new Error('Method not implemented.');
+  }
   listaPazienti: Paziente[]=[];
   activities: Attivita[]=[];
 

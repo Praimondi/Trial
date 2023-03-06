@@ -10,7 +10,7 @@ import { Paziente } from 'src/app/shared/interfaces/paziente';
 })
 export class PazientiComponent implements OnInit {
 
-  selectedValue: string="";
+  selectedValue: string="nessuno";
 
   constructor(private router: Router, private patientService: PatientService) {
   }
@@ -22,5 +22,4 @@ export class PazientiComponent implements OnInit {
   go2patients(){
     this.router.navigate(['listaPazienti/'+this.selectedValue]);
   }
-
 }

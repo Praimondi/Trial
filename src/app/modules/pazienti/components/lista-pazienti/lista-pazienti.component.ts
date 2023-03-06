@@ -12,8 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListaPazientiComponent{
   listaPazienti: Paziente[]=[];
-  allActivities: any;
-
+  allActivities: Attivita[]=[];
   selectedFilter: string = "";
 
   constructor(private patientService:  PatientService, private activatedRoute: ActivatedRoute, private router: Router) { }
@@ -23,9 +22,7 @@ export class ListaPazientiComponent{
     this.activatedRoute.params.subscribe(params => {
       this.selectedFilter = params['selectedValue'];
     })
-    console.log('sono in lista filetr: '+this.selectedFilter);
-
-    // importa li array dal service
+    // importa gli array dal service
     this.allActivities = this.patientService.getActivities();
     this.listaPazienti = this.patientService.getListaPazienti();
   }

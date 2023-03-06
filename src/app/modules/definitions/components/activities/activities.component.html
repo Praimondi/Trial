@@ -1,4 +1,4 @@
-<ul *ngFor="let item of listaAttivitaTipo" class="col-sm-3">
+<!-- <ul *ngFor="let item of listaAttivitaTipo" class="col-sm-3">
   <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px;">
     <h5 class="card-title">Attività: {{ item.activity }}</h5>
     <h6 class="card-title">Intensità: {{ item.intensity }}</h6>
@@ -9,3 +9,26 @@
 <a (click)="go2definitions()" class="btn btn-primary" style="margin-left: 54px;">
   <i class="bi bi-arrow-left"></i> Indietro
 </a>
+ -->
+
+
+ <div style="width: 100vw; height: fit-content; display: flex; flex-direction:column; justify-content: center; align-items: center;">
+    <table class="table" style="width: 40%; border: 1px solid #000; justify-content: center; align-items: center;">
+      <thead>
+        <tr style="background-color: #7cc8ff;align-items: center; vertical-align: middle">
+          <th scope="row"></th>
+          <th scope="row">Attività</th>
+          <th scope="row">Intensità</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let item of listaAttivitaTipo" style="background-color: #ffffff;align-items: center; vertical-align: middle">
+          <td scope="col"><img src="../../../../../assets/images/{{item.activity}}.png" alt="Logo"/></td>
+          <td scope="col">{{item.activity}}</td>
+          <td scope="col">{{item.intensity}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
