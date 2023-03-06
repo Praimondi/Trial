@@ -15,7 +15,6 @@ export class PazientiComponent implements OnInit {
   constructor(private router: Router, private patientService: PatientService) {
   }
   ngOnInit(): void {
-    console.log('sono in pazienti costruttore: '+this.selectedValue);
     this.patientService.setListaPazienti();
     this.patientService.setActivities();
   }

@@ -97,8 +97,7 @@ export class ListaPazientiComponent{
         moderateMinutes += attivita.minutes;
       }
     })
-    console.log(vigorousMinutes/moderateMinutes);
-    // console.log(moderateMinutes);
+
     // if (vigorousMinutes/moderateMinutes === 0.25) {
 /*     if (vigorousMinutes+moderateMinutes >= 125) {
       return 'rgb(189, 239, 189)'

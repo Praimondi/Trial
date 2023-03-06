@@ -1,35 +1,74 @@
-<h4 style="display: flex; justify-content: center;">ID Paziente Selezionato: {{pazienteSelezionato.id}}</h4>
+<h4 style="display: flex; justify-content: center">
+  ID Paziente Selezionato: {{ pazienteSelezionato.id }}
+</h4>
 
-<div style="width: 100vw; height: fit-content; display: flex; flex-direction: row; justify-content: center;">
-
-  <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px; border: 1px solid rgb(0, 0, 0); width: 20%;">
-    <h4 class="card-title" style="margin-left: 30px;">Nome: {{pazienteSelezionato.name}}</h4>
+<div style="width: 100vw; height: auto; display: flex; justify-content: center">
+  <div
+    class="card"
+    style="
+      margin: 20px;
+      margin-right: 20px;
+      border: 1px solid rgb(0, 0, 0);
+      width: 25%;
+    "
+  >
+    <legend style="margin-left: 30px; margin-top: 10px"><b>Dati Paziente</b></legend>
 
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Genere: {{pazienteSelezionato.gender}}</li>
-        <li class="list-group-item">Data di Nascita: {{pazienteSelezionato.birthDate}} </li>
-        <li class="list-group-item">Altezza: {{ pazienteSelezionato.heightCm }} cm</li>
-        <li class="list-group-item">Peso: {{ pazienteSelezionato.weightKg }} Kg</li>
-        <li class="list-group-item">Indice di massa corporea(bmi): {{ pazienteSelezionato.bmi }}</li>
+        <li class="list-group-item">
+          <b>Nome :</b> {{ pazienteSelezionato.name }}
+        </li>
+        <li class="list-group-item">
+          <b>Genere :</b> {{ pazienteSelezionato.gender }}
+        </li>
+        <li class="list-group-item">
+          <b>Data di Nascita :</b> {{ pazienteSelezionato.birthDate }}
+        </li>
+        <li class="list-group-item">
+          <b>Altezza :</b> {{ pazienteSelezionato.heightCm }} cm
+        </li>
+        <li class="list-group-item">
+          <b>Peso :</b> {{ pazienteSelezionato.weightKg }} Kg
+        </li>
+        <li class="list-group-item">
+          <b>BMI<sup> *</sup> :</b> {{ pazienteSelezionato.bmi }}
+        </li>
+        <li class="list-group-item" style="font-size: 12px; font-weight: 400">
+          <i><sup>*</sup> Indice di massa corporea</i>
+        </li>
       </ul>
     </div>
   </div>
 
-
-
-  <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px; border: 1px solid rgb(0, 0, 0); width: 20%;">
-    <h4 class="card-title" style="display: flex; justify-content: center">Summary </h4>
-    <div class="card-body" *ngFor="let attivita of pazienteSelezionato.summary">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Attività: {{attivita.activity}} </li>
-        <li class="list-group-item">Minuti: {{attivita.minutes}} </li>
+  <div
+    class="card"
+    style="
+      margin: 20px;
+      margin-left: 20px;
+      border: 1px solid rgb(0, 0, 0);
+      width: 25%;
+    "
+  >
+    <legend style="margin-left: 34px; margin-bottom: 14px; margin-top: 10px">
+      <b>Summary</b>
+    </legend>
+    <div class="card-body" style="padding-top: 0; padding-bottom: 0">
+      <ul
+        style="padding-left: 20px; margin-bottom: 32px"
+        *ngFor="let attivita of pazienteSelezionato.summary"
+      >
+        <li style="list-style: none">
+          <b>Attività :</b> {{ attivita.activity }}
+        </li>
+        <li style="list-style: none"><b>Minuti :</b> {{ attivita.minutes }}</li>
+        <hr style="padding: 0; margin: 0" />
       </ul>
     </div>
   </div>
-
 </div>
-<div style="display: flex; flex-direction: row; justify-content: center;">
-  <button (click)="go2ListaPazienti()" class="btn btn-primary" style=" height: 3vh;display: flex; flex-direction: row; justify-content: center;"><i class="bi bi-arrow-left"></i> Indietro</button>
+<div style="display: flex; justify-content: center; height: auto">
+  <button (click)="go2ListaPazienti()" class="btn btn-primary">
+    Indietro
+  </button>
 </div>
-
