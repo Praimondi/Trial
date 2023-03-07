@@ -1,18 +1,25 @@
-<div
-  class=""
-  style="
+<div style="margin-left: 10px;margin-top: 10px;">
+  <h3>Filtri</h3>
+  <ul>
+
+    <li>Il filtro <b>150m moderati</b> permette di evidenziare i pazienti che riescono a condurre almeno 150 minuti di
+      attività fisica moderata
+    <li>Il filtro <b>70m vigorosi</b> permette di evidenziare i pazienti che riescono a condurre almeno 70 minuti di
+      attività fisica vigorosa
+    <li>Il filtro <b>mix moderato/vigoroso</b> permette di evidenziare i pazienti che riescono a condurre un misto
+      proporzionato di attività fisica vigorosa e moderata (1:4)
+  </ul>
+</div>
+
+<div class="" style="
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 15vh;
-  "
->
-  <select
+  ">
 
-    [(ngModel)]="selectedValue"
-
-    style="
+  <select [(ngModel)]="selectedValue" style="
       background-color: #84ede1;
       color: #000000;
       padding: 2px 6px;
@@ -20,42 +27,33 @@
       border: #000;
       height: 37.6px;
       margin-right: 10px;
-    "
-    onfocus="this.style.border='none'">
+    " onfocus="this.style.border='none'">
 
 
-    <option
-      value="nessuno"
-      style="
+    <option value="nessuno" style="
       margin: 40px;
       background: #fff;
       color: #000;
       text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);">
       Tutti i pazienti</option>
 
-    <option
-        value="moderate150"
-        style="
+    <option value="moderate150" style="
         margin: 40px;
         background: #fff;
         color: #000;
         text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);">
-        150m moderati
+      150m moderati
     </option>
 
-    <option
-        value="vigorous70"
-        style="
+    <option value="vigorous70" style="
         margin: 40px;
         background: #fff;
         color: #000;
         text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);">
-        70m vigorosi
+      70m vigorosi
     </option>
 
-    <option
-      value="mixedIntensity"
-      style="
+    <option value="mixedIntensity" style="
       margin: 40px;
       background: #fff;
       color: #000;
@@ -70,5 +68,3 @@
 </div>
 
 <router-outlet></router-outlet>
-
-
